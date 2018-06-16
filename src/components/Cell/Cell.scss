@@ -1,5 +1,5 @@
-$color: #eee;
-$width: 40px;
+$color: limegreen;
+$width: 30px;
 $sizeHalf: $width / 2;
 $sizeBorder: $width * 0.2887;
 $height: $width * 0.5774;
@@ -12,11 +12,21 @@ $noise: 'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAA
   width: $width;
   height: $height;
   background: $color;
-  background-image: url($noise);
+
+  // .texture {
+  //   position: absolute;
+  //   z-index: 1;
+  //   left: 0;
+  //   top: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-image: url($noise);
+  // }
 
   &:before,
   &:after {
     content: "";
+    overflow: hidden;
     position: absolute;
     width: 0;
     border-left: $sizeHalf solid transparent;
@@ -30,7 +40,6 @@ $noise: 'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAA
 
   &:after {
     top: 100%;
-    width: 0;
     border-top: $sizeBorder solid $color;
   }
 }
