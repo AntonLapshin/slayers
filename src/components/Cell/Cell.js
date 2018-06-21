@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Cell.css';
-import noise from '../../img/noise.png';
+import { Unit } from 'components';
+import noise from './images/noise.png';
 
 const width = 31;
 const height = 35;
 
 export const Cell = props => {
-    const { x, y } = props;
+    const { x, y, color, unit } = props;
     const style = {
         left: x * width + 'px',
         top: y * height + 1 * y + (x % 2 === 1 ? height / 2 : 0) + 'px'
     };
+    const className = 'cell color' + color;
     return (
-        <div className="cell color2" style={style}>
+        <div className={className} style={style}>
             <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,13 +46,16 @@ export const Cell = props => {
                 <path
                     className="color"
                     d="M0 17.32050807568877L10 0L30 0L40 17.32050807568877L30 34.64101615137754L10 34.64101615137754Z"
-                />                
+                />
             </svg>
+            {unit && <Unit data={unit} />}
         </div>
     );
 };
 
 Cell.propTypes = {
+    color: PropTypes.number.isRequired,
+    unit: PropTypes.object,
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
 };

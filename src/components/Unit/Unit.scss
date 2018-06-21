@@ -1,0 +1,53 @@
+.unit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    &.home {
+        width: 27px;
+        margin-top: -7px;
+        margin-left: -11px;
+    }
+
+    &.tree {
+        margin-top: -5px;
+        margin-left: -10px;
+    } 
+    
+    &.tower {
+        width: 25px;
+        margin-top: -5px;
+        margin-left: -11px;
+    }     
+
+    &.unit1, &.unit2, &.unit3, &.unit4, {
+        width: 18px;
+        margin-left: -7px;
+        margin-top: -11px;
+    }
+
+    .star {
+
+    }
+}
+
+.star {
+    position: absolute;
+    width: 7px;
+
+    &.star0 {
+        left: 25px;
+        top: 26px;
+    }
+
+    &.star1 {
+        left: 28px;
+        top: 21px;
+    }   
+
+    &.star2 {
+        left: 31px;
+        top: 16px;
+    }       
+}
